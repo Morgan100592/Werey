@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morgan Gym - Member Registration</title>
+    <link rel="stylesheet" href="Gymfile1.css" />
+    <style>
+        /* Basic styling for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h3 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: inline-block;
+            width: 180px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 300px;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group, .checkbox-group {
+            margin: 15px 0;
+        }
+        button {
+            padding: 12px 24px;
+            margin: 20px 10px 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+        .reset-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MORGAN GYM - Member Registration</h1>
+
+    <form action="#" method="POST"> <!-- Change action to your backend endpoint later -->
+
+        <!-- Personal Information -->
+        <div>
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" placeholder="Enter your surname" required />
+        </div>
+
+        <div>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required />
+        </div>
+
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1234567890" required />
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required />
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="16" max="80" required />
+        </div>
+
+        <div>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required />
+        </div>
+
+        <div class="radio-group">
+            <label>Gender:</label><br/>
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other" />
+            <label for="other">Other / Prefer not to say</label>
+        </div>
+
+        <div>
+            <label for="address">Address:</label><br/>
+            <textarea id="address" name="address" cols="50" rows="4" placeholder="Enter your full address" required></textarea>
+        </div>
+
+        <!-- Membership Details -->
+        <fieldset>
+            <legend><h3>Membership Details</h3></legend>
+
+            <div>
+                <label for="joining-date">Joining Date:</label>
+                <input type="date" id="joining-date" name="joining_date" required />
+            </div>
+
+            <div class="radio-group">
+                <label>Membership Type:</label><br/>
+                <input type="radio" id="basic" name="membership" value="basic" required />
+                <label for="basic">Basic (Gym Only)</label><br/>
+
+                <input type="radio" id="gold" name="membership" value="gold" />
+                <label for="gold">Gold (Gym + Cardio)</label><br/>
+
+                <input type="radio" id="premium" name="membership" value="premium" />
+                <label for="premium">Premium (Gym + Cardio + CrossFit)</label>
+            </div>
+
+            <div>
+                <label for="duration">Duration:</label>
+                <select id="duration" name="duration" required>
+                    <option value="" disabled selected>Select duration</option>
+                    <option value="1">1 Month</option>
+                    <option value="3">3 Months</option>
+                    <option value="6">6 Months</option>
+                    <option value="12">12 Months</option>
+                </select>
+            </div>
+
+            <div class="checkbox-group">
+                <p><strong>Interested in any add-ons?</strong></p>
+                <input type="checkbox" id="yoga" name="addons" value="yoga" />
+                <label for="yoga">Yoga Classes</label><br/>
+
+                <input type="checkbox" id="tp-trail" name="addons" value="free-tp-trail" />
+                <label for="tp-trail">Free Personal Training Trial</label><br/>
+
+                <input type="checkbox" id="zumba" name="addons" value="zumba" />
+                <label for="zumba">Zumba</label><br/>
+
+                <input type="checkbox" id="piloxing" name="addons" value="piloxing" />
+                <label for="piloxing">Piloxing</label><br/>
+
+                <input type="checkbox" id="diet" name="addons" value="diet-plan" />
+                <label for="diet">Personalized Diet Plan</label>
+            </div>
+        </fieldset>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button type="submit" class="submit-btn">Submit Registration</button>
+            <button type="reset" class="reset-btn">Reset Form</button>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="#" class="back-link" onclick="history.back(); return false;">← Go Back</a>
+        </div>
+    </form>
+
+</body>
+</html>
